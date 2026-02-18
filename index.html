@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuzzads.com | Next-Gen Digital Marketing</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+
+
+
+<body>
+
+<!-- AI CHATBOT -->
+<div id="aiChatbot">
+  <div id="aiHeader">🤖 Fuzzads AI Assistant</div>
+
+  <div id="aiMessages"></div>
+
+  <div id="aiOptions">
+    <button onclick="userSelect('SEO')">SEO</button>
+    <button onclick="userSelect('Paid Ads')">Paid Ads</button>
+    <button onclick="userSelect('Social Media')">Social Media</button>
+    <button onclick="userSelect('Website')">Website</button>
+  </div>
+</div>
+
+<button id="chatbotToggle" onclick="toggleChatbot()">💬</button>
+
+
+<header>
+<div class="logo">
+  <img src="fuzz.jpeg" alt="Fuzzads Logo">
+  
+</div>
+
+<nav class="top-contact">
+
+  <!-- EMAIL -->
+  <a href="mailto:info@fuzzads.com?subject=Business Inquiry from Website&body=Hi FuzzAds Team,%0A%0AI am interested in your services.%0A%0APlease contact me.%0A%0AThanks."
+     class="nav-contact">
+    📧 info@fuzzads.com
+  </a>
+
+  <!-- PHONE -->
+  <a href="tel:+919310930177" class="nav-contact">
+    📞 +91 93109 30177
+  </a>
+
+  <button id="modeToggle">Light Mode</button>
+
+</nav>
+
+</header>
+
+<section class="hero" id="home" style="position:relative; height:100vh; display:flex; align-items:center; justify-content:center; padding:0 50px; overflow:hidden;">
+  <!-- THREE.JS BACKGROUND -->
+  <div id="threejs" style="position:absolute; inset:0; z-index:-1;"></div>
+
+  <!-- HERO CONTENT -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:50px; max-width:1200px; width:100%;">
+    
+    <!-- LEFT TEXT -->
+    <div style="flex:1; min-width:320px; max-width:600px;">
+      <h2 style="font-size:3.5rem; color:#00a5e0; line-height:1.2; margin-bottom:20px; font-weight:700;">Digital Marketing & Web Solutions</h2>
+      <p style="font-size:1.2rem; color:#ccc; margin-bottom:10px;">Do you know what it takes to grow your business online?</p>
+      <p style="font-size:1.2rem; color:#ccc; margin-bottom:25px;">Do you want to?</p>
+      <button onclick="openWhatsApp()" style="padding:15px 40px; font-size:1rem; background:linear-gradient(135deg,#00a5e0,#26017b); border:none; border-radius:30px; color:#fff; cursor:pointer; box-shadow:0 10px 20px rgba(108,99,255,0.3); transition:0.3s;">
+        Get Started
+      </button>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div style="flex:1; min-width:320px; max-width:600px; display:flex; justify-content:center; align-items:center;">
+      <img src="F2.png" 
+           alt="Digital Marketing Illustration" 
+           style="width:100%; max-width:500px; border-radius:20px; box-shadow:0 25px 60px rgba(0,0,0,0.3); transform:translateY(0); transition:0.5s;">
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section about-section" id="about">
+
+
+  <!-- Decorative Circles for Style -->
+  <span style="position:absolute; width:200px; height:200px; background:#00a5e0; border-radius:50%; top:-50px; left:-50px; opacity:0.1;"></span>
+  <span style="position:absolute; width:300px; height:300px; background:#26017b; border-radius:50%; bottom:-100px; right:-100px; opacity:0.1;"></span>
+
+  <h3 style="text-align:center; font-size:3rem; margin-bottom:60px; color:#00a5e0; letter-spacing:1px; font-weight:700; text-transform:uppercase;">About Us</h3>
+
+  <div class="about-container" style="
+        display:flex; 
+        flex-wrap:wrap; 
+        align-items:flex-start; 
+        justify-content:center; 
+        gap:50px; 
+        max-width:1200px; 
+        margin:auto;
+    ">
+
+    <!-- LEFT IMAGE -->
+    <div style="flex:0 0 400px; display:flex; justify-content:center; position:relative;">
+      <img src="F.png" 
+           alt="Digital Marketing Illustration" 
+           style="width:100%; max-width:400px; border-radius:20px; box-shadow:0 25px 50px rgba(0,0,0,0.5); transition: transform 0.5s, box-shadow 0.5s;">
+
+      <!-- Glow Effect -->
+      <div style="position:absolute; inset:0; border-radius:20px; box-shadow:0 0 60px rgba(0,165,224,0.4); opacity:0.6;"></div>
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div style="flex:1; min-width:400px; max-width:750px;">
+      <div style="padding:35px 40px; background:rgba(255,255,255,0.05); border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.5); backdrop-filter:blur(15px); transition: transform 0.5s;">
+
+        <h4 style="color:#00a5e0; margin-bottom:20px; font-size:1.8rem;">Who We Are </h4>
+
+        <p style="line-height:1.9; margin-bottom:20px;">
+          Founded in 2026, <strong>FuzzAds</strong> is a leading Digital Marketing and IT company based in Greater Noida, Dedicated to helping businesses grow and scale faster.We combine Creativity, Strategy, and Cutting -Edge technologies to deliver impactful digital solutions Worldwide.  We specialize in complete digital transformation services under one roof, including SEO, Paid Ads, Social Media Marketing, Website Design & Development, and Analytics.
+        </p>
+        <h4 style="color:#00a5e0; margin-bottom:20px; font-size:1.8rem;">Our Mission </h4>
+        <p style="line-height:1.9; margin-bottom:20px;">
+          Empower small & meduim-sized businesses with affordable, high-quality digital marketing solutions, help them achieve measurable growth, and provide dedicated support to ensure their success.
+        </p>
+        <h4 style="color:#00a5e0; margin-bottom:20px; font-size:1.8rem;">Our Vision </h4>
+        <p style="line-height:1.9; margin-bottom:20px;">
+          To be the most trusted digital marketing partner in India and the Globally, delivering Innovative, Scalable, and Data-Driven strategies that transform businesses. 
+        </p>
+        
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="section" id="services">
+  <h3>Our Services</h3>
+  <div class="cards">
+
+    <div class="card">
+       <div class="stat-icon">🔍</div>
+      <h4>Search Engine Optimization (SEO)</h4>
+      <p>Our SEO services in Greater Noida help your website rank on Google, bring more visitors and grow your business naturally.</p>
+    </div>
+
+    <div class="card">
+      <div class="stat-icon">📢</div>
+      <h4>Social Media Marketing</h4>
+      <p>Reach more people with our Social Media Marketing services in Greater Noida. We help businesses to connect with the right audience on Linkedln and Instagram, and turn leads into real results. </p>
+    </div>
+
+    <div class="card">
+      <div class="stat-icon">🚀</div>
+      <h4>Social Media Optimization</h4>
+      <p>Our SMO services improve the visibility of your social media pages. Through profile and content optimization, we make your social media accounts more visible, more engaging and more trusted by the public.</p> 
+    </div>
+
+    
+
+    <div class="card">
+      <div class="stat-icon">🧑‍💻</div>
+      <h4>Web Development</h4>
+      <p>Our website development services will enable you to create a strong online presence. The websites we build are super quick and mobile-friendly, thus making it easier for the business to turn the website visitors into customers.</p>
+    </div>
+
+    <div class="card">
+      <div class="stat-icon">📱</div>
+      <h4>App Development</h4>
+      <p>With our app development services, you can develop quick and user-friendly mobile applications. We create consumer-friendly apps for both Android and iOS that allow businesses to interact with their clients more efficiently.</p>
+    </div>
+
+    
+    <div class="card">
+      <div class="stat-icon">💻</div>
+      <h4>Custom Software Development</h4>
+      <p>Build tailored software solutions to automate processes, improve efficiency, and meet your unique business needs.</p>
+    </div>
+
+    <div class="card">
+  <div class="stat-icon">🎨</div>
+  <h4>Graphic Design</h4>
+  <p>Our graphic design services create visually powerful and brand-focused designs that capture attention, communicate your message clearly, and build a strong identity across digital and print platforms.</p>
+</div>
+
+
+    <div class="card">
+      <div class="stat-icon">🖱️</div>
+      <h4>Pay Per Click(PPC)</h4>
+      <p>With our cutting-edge PPC services, you get fast visibility. We run intelligent Google and Social media ads that generate the traffic you want and give you the results you can measure.</p>
+    </div>
+
+    <div class="card">
+      <div class="stat-icon">📝</div>
+      <h4>Content Marketing</h4>
+      <p>Our content marketing services help you share helpful content that brings people to your website and keeps them engaged.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="stats-section">
+
+  <h2 class="section-title">DO YOU KNOW?</h2>
+
+  <div class="stat-card">
+    <h3>98%</h3>
+    <p>of consumers search online before making a purchase decision.</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>89%</h3>
+    <p>marketers say SEO generates higher quality leads than traditional marketing.</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>94%</h3>
+    <p>first impressions are design-related when users visit a website.</p>
+  </div>
+
+  <!-- CENTER CONNECT DESIGN -->
+  <div class="connect-wrapper">
+
+    <svg viewBox="0 0 800 300" class="connect-lines">
+
+      <!-- TOP CURVES -->
+      <path d="M200 40 Q200 120 350 120" />
+      <path d="M400 40 Q400 120 400 120" />
+      <path d="M600 40 Q600 120 450 120" />
+
+      <!-- BOTTOM CURVES -->
+      <path d="M200 260 Q200 180 350 180" />
+      <path d="M400 260 Q400 180 400 180" />
+      <path d="M600 260 Q600 180 450 180" />
+
+      <!-- DOTS -->
+      <circle cx="200" cy="40" r="6" />
+      <circle cx="400" cy="40" r="6" />
+      <circle cx="600" cy="40" r="6" />
+      <circle cx="200" cy="260" r="6" />
+      <circle cx="400" cy="260" r="6" />
+      <circle cx="600" cy="260" r="6" />
+
+    </svg>
+
+    <div class="center-badge">
+      DIGITAL MARKETING <span>BENEFITS</span>
+    </div>
+
+  </div>
+
+  <div class="stat-card">
+    <h3>92%</h3>
+    <p>customers trust recommendations and online reviews before buying.</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>87%</h3>
+    <p>businesses see measurable growth after investing in paid advertising.</p>
+  </div>
+
+  <div class="stat-card">
+    <h3>85%</h3>
+    <p>businesses report higher sales after running targeted digital campaigns.</p>
+  </div>
+
+</section>
+
+
+
+<section class="section dark" id="services">
+
+  <h3>What We Do Best</h3>
+
+  <p class="section-subtitle fancy-subtitle">
+    Performance-driven digital solutions designed to
+    <span>increase visibility</span>,
+    <strong>build authority</strong> and
+    <em>scale revenue</em> with precision.
+  </p><br>
+
+  <div class="cards services">
+
+    <!-- 1️⃣ SEO -->
+    <div class="card">
+      <div class="stat-icon">🔍</div>
+      <h4>Search Engine Optimization (SEO)</h4>
+      <p>
+        Rank higher on Google, drive organic traffic, and generate consistent
+        high-quality leads with data-backed SEO strategies.
+      </p>
+      <span>On-Page SEO • Technical SEO • Content Strategy • Link Building</span>
+    </div>
+
+    <!-- 2️⃣ Web Development -->
+    <div class="card">
+      <div class="stat-icon">🧑‍💻</div>
+      <h4>Web Development</h4>
+      <p>
+        High-performance, mobile-responsive websites engineered to convert
+        visitors into customers and scale your online presence.
+      </p>
+      <span>Business Websites • Landing Pages • E-commerce • Funnels</span>
+    </div>
+
+    <!-- 3️⃣ Graphic Design -->
+    <div class="card">
+      <div class="stat-icon">🎨</div>
+      <h4>Graphic Design</h4>
+      <p>
+        Visually compelling brand assets that capture attention and strengthen
+        your brand identity across digital platforms.
+      </p>
+      <span>Branding • Social Media Creatives • UI Design • Marketing Graphics</span>
+    </div>
+
+    <!-- 4️⃣ App Development -->
+    <div class="card">
+      <div class="stat-icon">📱</div>
+      <h4>App Development</h4>
+      <p>
+        Custom Android & iOS applications built for performance,
+        user engagement and business growth.
+      </p>
+      <span>Android • iOS • Cross-Platform • Custom Solutions</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section dark" id="why-us">
+  <h3>Why Choose Us?</h3>
+  <p class="section-subtitle fancy-subtitle">
+  We don’t chase <span>vanity metrics</span>. We engineer
+  <strong>predictable revenue</strong> using
+  <em>AI, data</em> and performance-driven growth strategies.
+</p><br>
+
+
+  <div class="cards why-us">
+
+    <div class="card">
+      <h4>Expert-Led Strategy</h4>
+      <p>
+        Campaigns driven by <strong>SEO experts in Greater Noida</strong> and market insights.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Customized Solutions</h4>
+      <p>
+        Tailored <strong>SEO services</strong> and <strong>website designing in Greater Noida.</strong>
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Transparent Reporting</h4>
+      <p>
+        Clear analytics for <strong>PPC,SMM,</strong> and <Strong>digital marketing performance.</Strong>
+      </p>
+    </div>
+
+    
+
+    <div class="card">
+      <h4>Affordable Excellence</h4>
+      <p>
+        Competitive rates for <strong>social media optimization company services.</strong>
+      </p>
+    </div>
+
+    
+
+  
+</section>
+
+
+<section class="section dark" id="testimonials">
+  <h3>What Our Clients Say</h3>
+
+  <p class="section-subtitle fancy-subtitle">
+  Results-driven partnerships that
+  <span>scale revenue</span>,
+  <strong>improve ROI</strong> and
+  <em>outperform</em> expectations for
+  startups, SaaS companies, e-commerce brands and local businesses worldwide.
+</p><br>
+
+
+  <div class="cards testimonials">
+
+    <div class="card">
+      <p>
+        “Our revenue <strong>tripled in 90 days</strong>. The team built a complete
+        performance system, not just ads.”
+      </p>
+      <strong class="author">— Founder, Vincentvolt</strong>
+    </div>
+
+    <div class="card">
+      <p>
+        “We finally achieved <strong>profitable ads</strong> with predictable lead flow.
+        Clear reporting and serious execution.”
+      </p>
+      <strong class="author">— RD Oasis Founder</strong>
+    </div>
+
+    <div class="card">
+      <p>
+
+        “Best growth partner we’ve worked with.
+        <strong>ROI-focused, fast and transparent.</strong>”
+      </p>
+      <strong class="author">— Head of Marketing</strong>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section clients-section" id="clients">
+
+  <h2 class="clients-title">Our Clients</h2>
+
+  <div class="clients-slider">
+
+    <div class="clients-track">
+      <!-- Repeat logos for smooth infinite effect -->
+
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+
+      <!-- Duplicate same logos -->
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+      <div class="client-logo"><img src="Vincentvolt.png" alt=""></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section dark" id="testimonials">
+  <h3>Our Impact In Numbers</h3>
+
+
+  <div class="cards testimonials">
+
+    <div class="card">
+        <div class="stat-icon">👥</div>
+        <h4>2+</h4>
+      <strong class="author">Happy Clients</strong>
+    </div>
+
+    <div class="card">
+         <div class="stat-icon">🌍</div>
+         <h4>2026</h4>
+      <strong class="author">Established</strong>
+    </div>
+
+    <div class="card">
+        <div class="stat-icon">🎯</div>
+         <h4>4+</h4>
+      <strong class="author">Projects Completed</strong>
+    </div>
+
+    <div class="card">
+        <div class="stat-icon">🏆</div>
+         <h4>1+</h4>
+      <strong class="author">Awards Won</strong>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section" id="contact">
+
+  <div id="leadForm" class="popup">
+    <div class="popup-box">
+
+      <h3 >Let’s Grow Your Business</h3>
+
+      <p style="max-width:650px;margin:15px auto 25px;">
+        Book a free strategy session and discover how we can scale your business profitably.
+      </p>
+
+      <form onsubmit="submitLead(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+
+        <select id="service">
+          <option>SEO</option>
+          <option>Paid Ads</option>
+          <option>Social Media</option>
+          <option>Website & Funnels</option>
+        </select>
+
+        <button type="submit">Submit Inquiry & WhatsApp</button>
+      </form>
+
+    </div>
+  </div>
+
+  
+
+</section>
+
+
+
+
+<section class="section premium-faq" id="faq">
+
+  <h2 class="faq-title">Frequently Asked Questions (FAQs)</h2>
+
+  <div class="faq-container">
+
+    <div class="faq-box">
+      <div class="faq-question">
+        What is digital marketing strategy?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        A digital marketing strategy is a structured plan to attract,
+        convert and retain customers using SEO, paid ads and automation.
+
+        <br><br>
+
+        It aligns your business goals with the right digital channels
+        to maximize visibility and revenue growth.
+      </div>
+    </div>
+
+    <div class="faq-box">
+      <div class="faq-question">
+        Why does my business need SEO?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        SEO improves your Google ranking, drives organic traffic and
+        generates consistent high-quality leads.
+
+        <br><br>
+
+        It builds long-term online authority without paying for every click.
+      </div>
+    </div>
+
+    <div class="faq-box">
+      <div class="faq-question">
+        How long does it take to see results?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        SEO typically takes 3–6 months depending on competition.
+        Paid ads can generate measurable results within days.
+
+        <br><br>
+
+        We focus on both short-term wins and long-term growth.
+      </div>
+    </div>
+
+    <!-- NEW QUESTION 4 -->
+    <div class="faq-box">
+      <div class="faq-question">
+        Do you provide website development services?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes. We build high-performance, mobile-responsive websites
+        optimized for speed, user experience and conversions.
+
+        <br><br>
+
+        From business websites to e-commerce and funnels,
+        we deliver scalable digital platforms.
+      </div>
+    </div>
+
+    <!-- NEW QUESTION 5 -->
+    <div class="faq-box">
+      <div class="faq-question">
+        Is digital marketing suitable for small businesses?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Absolutely. Digital marketing allows small businesses
+        to compete with larger brands through smart targeting
+        and measurable campaigns.
+
+        <br><br>
+
+        It provides cost-effective strategies with clear ROI tracking.
+      </div>
+    </div>
+
+    <!-- NEW QUESTION 6 -->
+    <div class="faq-box">
+      <div class="faq-question">
+        How do I get started with FuzzAds?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Simply contact us for a free strategy consultation.
+
+        <br><br>
+
+        We analyze your business, identify growth opportunities
+        and create a customized action plan to scale your revenue.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- ABOUT -->
+    <div class="footer-col">
+  <h2 class="footer-logo">FUZZADS</h2>
+  <h3 class="footer-logo">Our Team Your Work</h3>
+  <p>
+    We are passionate about growing brands using modern,
+    data-driven digital marketing strategies that actually convert.
+  </p>
+
+  <!-- ADDRESS BELOW LOGO -->
+  <div class="footer-address">
+    <h4>Address</h4>
+    <p>📍 Omicron I, Greater Noida, Uttar Pradesh 201310, India</p>
+    <a href="mailto:info@fuzzads.com?subject=Business Inquiry from Website&body=Hi FuzzAds Team,%0A%0AI am interested in your services.%0A%0APlease contact me.%0A%0AThanks."
+     class="nav-contact">
+    📧 info@fuzzads.com
+  </a>
+
+  <!-- PHONE -->
+  <a href="tel:+919310930177" class="nav-contact">
+    📞 +91 93109 30177
+  </a>
+
+    <div class="footer-social">
+      <!-- Facebook -->
+  <a href="#" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.2V12h2.2V9.6c0-2.2 1.3-3.4 3.3-3.4.96 0 2 .17 2 .17v2.2h-1.1c-1.1 0-1.4.68-1.4 1.38V12h2.4l-.38 2.9h-2V22A10 10 0 0022 12z"/>
+    </svg>
+  </a>
+
+  <!-- Twitter / X -->
+  <a href="#" aria-label="Twitter X">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.3 2H21l-6.3 7.2L22 22h-6l-4.7-6.4L5.8 22H3l6.8-7.8L2 2h6.1l4.3 5.9L18.3 2z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="#" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8H4.8V24H.2V8zM8.4 8h4.4v2.2h.06c.6-1.1 2.1-2.2 4.3-2.2 4.6 0 5.4 3 5.4 7V24h-4.6v-6.7c0-1.6 0-3.7-2.3-3.7-2.3 0-2.6 1.7-2.6 3.6V24H8.4V8z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="#" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"/>
+    </svg>
+  </a>
+    </div>
+  </div>
+</div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="Service.html">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="Contact.html">Contact Us</a>
+      <a href="policy.html">Privacy Policy</a>
+      <a href="Terms.html">Terms & Conditions</a>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a>SEO Optimization</a>
+      <a>Social Media Marketing</a>
+      <a>Social Media Optimization</a>
+      <a>Web Development</a>
+      <a>App Development</a>
+      <a>Custom Software Development</a>
+      <a>Graphic Design</a>
+      <a>Pay Per Click(PPC)</a>
+      <a>Content Marketing</a>
+    </div>
+
+    
+</div>
+
+
+<!-- Google Map -->
+ <div class="footer-col">
+    <div class="footer-box map-box">
+      <h3>Find Us On Map</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d28054.239384741057!2d77.34392779999999!3d28.486173700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1771402282080!5m2!1sen!2sin"
+        width="100%" 
+        height="250" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Fuzzads.com • All Rights Reserved
+  </div>
+</footer>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
