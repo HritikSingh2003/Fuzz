@@ -1,27 +1,4 @@
 
-// Card Effects 
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mousemove", e=>{
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const midX = rect.width/2;
-    const midY = rect.height/2;
-
-    const rotateY = ((x-midX)/midX)*15;
-    const rotateX = -((y-midY)/midY)*15;
-
-    card.style.transform = 
-      `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-15px)`;
-  });
-
-  card.addEventListener("mouseleave", ()=>{
-    card.style.transform = "rotateY(0deg) rotateX(0deg)";
-  });
-});
-
-
 
 
 
@@ -82,14 +59,32 @@ camera.updateProjectionMatrix();
 renderer.setSize(innerWidth,innerHeight);
 });
 
+/* Portfolio Button */
+function viewPortfolio() {
+    window.location.href = 'portfolio.html';
+}
+
+
 /* LIGHT MODE TOGGLE */
-const toggle=document.getElementById("modeToggle");
-let isLight=false;
-toggle.onclick=()=>{
-document.body.classList.toggle("light-mode");
-isLight=!isLight;
-toggle.innerText=isLight?"Dark Mode":"Light Mode";
-};
+
+const toggleBtn = document.getElementById("modeToggle");
+const toggleIcon = document.getElementById("toggleIcon");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+
+  if (document.body.classList.contains("light-mode")) {
+    toggleIcon.src = "sun.png"; // Dark mode image
+    toggleIcon.alt = "Dark Mode";
+  } else {
+    toggleIcon.src = "moon.png";  // Light mode image
+    toggleIcon.alt = "Light Mode";
+  }
+});
+
+
+
+
 
 // GET FREE STRAGEGY CALL
 
@@ -101,50 +96,39 @@ function openWhatsApp(){
     window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
 }
 
-//BOOK FREE CALL FORM
 
 
-function submitLead(e){
+// EmailJS Gmail Integration - Bas yeh script add karein
+emailjs.init("YOUR_PUBLIC_KEY"); // Dashboard se copy karein
+
+function submitLead(e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
-    const service = document.getElementById("service").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    
+    const leadId = "LEAD-" + Date.now();
 
-    // Unique Lead ID
-    const leadId = "FZ-" + Math.floor(Math.random() * 1000000);
-
-    // WhatsApp Message (PRO FORMAT)
-    const msg = encodeURIComponent(
-        "🔥 *NEW LEAD FROM FUZZADS WEBSITE* 🔥\n\n" +
-        "🆔 Lead ID: " + leadId + "\n" +
-        "👤 Name: " + name + "\n" +
-        "📧 Email: " + email + "\n" +
-        "📞 Phone: " + phone + "\n" +
-        "📌 Interested In: " + service + "\n\n" +
-        "Please contact ASAP 🚀"
-    );
-
-    // Open WhatsApp
-    window.open(
-        "https://wa.me/919310930177?text=" + msg,
-        "_blank"
-    );
-
-    // OPTIONAL – n8n / Google Sheet
-    fetch("https://YOUR-N8N-WEBHOOK-URL", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            leadId, name, email, phone, service,
-            source: "Fuzzads Website",
-            date: new Date().toISOString()
-        })
-    }).catch(()=>{});
-
-    closeForm();
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+        lead_id: leadId,
+        name: name,
+        phone: phone,
+        email: email,
+        message: message
+    })
+    .then(() => {
+        alert('✅ Enquiry sent to Gmail!');
+        e.target.reset();
+    })
+    .catch((error) => {
+        alert('❌ Error! Try again.');
+        console.log(error);
+    });
 }
+
+
 
 
 
@@ -236,26 +220,7 @@ window.open("https://wa.me/919310930177?text="+msg,"_blank");
   aboutCard.style.transition = 'all 1s ease-out';
 
 
-  // FAQ ACCORDION
-const faqBoxes = document.querySelectorAll(".faq-box");
-
-faqBoxes.forEach(box=>{
-  box.querySelector(".faq-question")
-    .addEventListener("click", ()=>{
-
-      box.classList.toggle("active");
-
-      // Optional: close others automatically
-      faqBoxes.forEach(other=>{
-        if(other !== box){
-          other.classList.remove("active");
-        }
-      });
-
-  });
-});
-
-
+  
 
 
 
